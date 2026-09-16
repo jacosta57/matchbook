@@ -2,24 +2,24 @@
 pub enum Side {Buy, Sell}
 
 #[derive(Debug, Clone, PartialEq, Eq, Copy)]
-pub enum OrderType {Limit, Market}
+enum OrderType {Limit, Market}
 
 #[derive(PartialOrd, Ord, Debug, Clone, PartialEq, Eq, Copy)] 
-pub struct Price(pub u64);
+struct Price(u64);
 
-#[derive(Debug, Clone, PartialEq, Eq, Copy)] 
+#[derive(Debug, Clone, PartialEq, Eq, Copy)]
 struct Quantity(u64);
 
 #[derive(Debug, Clone, PartialEq, Eq, Copy)] 
-pub struct OrderId(pub u64);
+struct OrderId(u64);
 
-#[derive(Debug, Clone, PartialEq, Eq, Copy)] 
+#[derive(Debug, Clone, PartialEq, Eq, Copy)]
 struct Sequence(u64);
 
 #[derive(Debug, Clone, PartialEq, Eq, Copy)] 
-pub struct Order {
-    pub id: OrderId,
-    pub side: Side,
+struct Order {
+    id: OrderId,
+    side: Side,
     order_type: OrderType,
     pub price: Option<Price>,
     quantity: Quantity,
@@ -39,7 +39,7 @@ impl Order {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Copy)] 
+#[derive(Debug, Clone, PartialEq, Eq, Copy)]
 struct Trade {
     maker_order_id: OrderId,
     taker_order_id: OrderId,
