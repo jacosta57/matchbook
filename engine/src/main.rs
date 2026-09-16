@@ -1,6 +1,4 @@
-mod types;
 mod book;
+mod types;
 
-fn main() {
-    
-}
+fn main() {}
